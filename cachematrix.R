@@ -7,14 +7,14 @@
 ## to store or retrieve it and its inverse.
 
 makeCacheMatrix <- function(mtx = matrix()) {
-	cache <- NULL
+	inv <- NULL
 	set <- function(newMatrix) {
 		mtx <<- newMatrix
-		cache <<- NULL
+		inv <<- NULL
 	}
 	get <- function() mtx
-	setinverse <- function(inverse) cache <<- inverse
-	getinverse <- function() cache
+	setinverse <- function(inverse) inv <<- inverse
+	getinverse <- function() inv
 
 	list(
 		set = set, 
@@ -24,7 +24,7 @@ makeCacheMatrix <- function(mtx = matrix()) {
 }
 
 
-## Calculates the inverse of the given matrix.
+## Calculates the inverse of a given matrix.
 ## If the calculation was previously done, it returns
 ## the cached result.
 
